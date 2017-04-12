@@ -1,4 +1,7 @@
 # iosAnimationDemo
+
+转载至：[iosAnimationDemo](https://github.com/a130785/iosAnimationDemo)
+
 iOS动画综合应用
 动效设计一直是iOS平台的优势，良好的动效设计可以很好地提升用户体验。而动画则是动效的基础支撑。本动画将从易到难逐步分析，从CABasicAnimation，UIBezierPath，CAShapeLayer三个方面完整的阐述iOS动画的实现。最终的效果如下：
 
@@ -83,7 +86,7 @@ positionAnima.delegate = self;
 ```
 代理方法实现
 ```
-//动画开始时- (void)animationDidStart:(CAAnimation *)anim{ 
+//动画开始时- (void)animationDidStart:(CAAnimation *)anim{
 NSLog(@"开始了");
 }
 //动画结束时- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
@@ -101,7 +104,7 @@ NSLog(@"开始了");
 所以，可根据key来区分不同的动画
 ```
 //动画开始时- (void)animationDidStart:(CAAnimation *)anim{
- if ([anim isEqual:[self.imageView.layer animationForKey:@"Animation"]]) { 
+ if ([anim isEqual:[self.imageView.layer animationForKey:@"Animation"]]) {
 NSLog(@"动画组执行了");
  }
 }
@@ -116,9 +119,9 @@ NSLog(@"动画组执行了");
 所以，可以根据key中不同的值来进行区分不同的动画
 ```
 //动画结束时- (void)animationDidStop:(CAAnimation *)anim finished:(BOOL)flag{
- if ([[anim valueForKey:@"AnimationKey"]isEqualToString:@"PositionAnima"]) { 
+ if ([[anim valueForKey:@"AnimationKey"]isEqualToString:@"PositionAnima"]) {
         NSLog(@"位置移动动画执行结束");
- } else if ([[anim valueForKey:@"AnimationKey"]isEqualToString:@"TransformAnima"]){ 
+ } else if ([[anim valueForKey:@"AnimationKey"]isEqualToString:@"TransformAnima"]){
         NSLog(@"旋转动画执行结束");
  }}
 ```
@@ -167,8 +170,8 @@ clockwise: 是否顺时针画弧线
 ```
 - (void)closePath;//闭合弧线
 ```
- 
- 
+
+
 ###CAShapeLayer
 CAShapeLayer是在其坐标系统内绘制贝塞尔曲线(UIBezierPath)的。因此，使用CAShapeLayer需要与UIBezierPath一起使用。
 
@@ -186,7 +189,7 @@ CAShapeLayer *circleLayer = [CAShapeLayer layer];
  // 指定frame，只是为了设置宽度和高度
  circleLayer.frame = CGRectMake(0, 0, 200, 200);
  // 设置居中显示
- circleLayer.position = self.view.center; 
+ circleLayer.position = self.view.center;
  // 设置填充颜色
  circleLayer.fillColor = [UIColor clearColor].CGColor;
  // 设置线宽
@@ -195,7 +198,7 @@ CAShapeLayer *circleLayer = [CAShapeLayer layer];
  circleLayer.strokeColor = [UIColor redColor].CGColor;
  // 使用UIBezierPath创建路径
  CGRect frame = CGRectMake(0, 0, 200, 200);
- UIBezierPath *circlePath = [UIBezierPath bezierPathWithOvalInRect:frame]; 
+ UIBezierPath *circlePath = [UIBezierPath bezierPathWithOvalInRect:frame];
 // 设置CAShapeLayer与UIBezierPath关联
  circleLayer.path = circlePath.CGPath;
  // 将CAShaperLayer放到某个层上显示
