@@ -6,14 +6,17 @@ iOS动画综合应用
 动效设计一直是iOS平台的优势，良好的动效设计可以很好地提升用户体验。而动画则是动效的基础支撑。本动画将从易到难逐步分析，从CABasicAnimation，UIBezierPath，CAShapeLayer三个方面完整的阐述iOS动画的实现。最终的效果如下：
 
 ![WuWeilogin.gif](http://upload-images.jianshu.io/upload_images/1968278-403281110ac5653e.gif?imageMogr2/auto-orient/strip)
-例子来源与网络，不是我写的，我只是加上了详细的注释，方便大家理解（我只是代码的搬运工...）。这个例子是CABasicAnimation，UIBezierPath，CAShapeLayer的综合实现，如果能完全理解这个例子，相信其它的iOS动画也难不倒你了。[demo下载地址](https://github.com/a130785/iosAnimationDemo)
-
+例子来源与网络。这个例子是CABasicAnimation，UIBezierPath，CAShapeLayer的综合实现，如果能完全理解这个例子，相信其它的iOS动画也难不倒你了。[demo下载地址](https://github.com/a130785/iosAnimationDemo)
 
    ###CABasicAnimation
 一、概念
 这个部分你需要了解以下概念: CALayer、CAAnimation、CAAnimationGroup
 #####1、CALayer
 CALayer是个与UIView很类似的概念，同样有backgroundColor、frame等相似的属性，我们可以将UIView看做一种特殊的CALayer。但实际上UIView是对CALayer封装，在CALayer的基础上再添加交互功能。UIView的显示必须依赖于CALayer。我们同样可以跟新建view一样新建一个layer，然后添加到某个已有的layer上，同样可以对layer调整大小、位置、透明度等。一般来说，layer可以有两种用途：一是对view相关属性的设置，包括圆角、阴影、边框等参数，更详细的参数请点击这里；二是实现对view的动画操控。**因此对一个view进行动画，本质上是对该view的.layer进行动画操纵。**
+
+插入一个Layer和View的简单区别：
+1.首先UIView可以响应事件，Layer不可以.因为UIView最终继承至UIResponder，而Layer继承至NSObject
+2.UIView主要是对显示内容的管理而 CALayer 主要侧重显示内容的绘制。
 
 #####2、CAAnimation
 CAAnimation可以分为以下几类：
@@ -41,9 +44,12 @@ transformAnima.beginTime = CACurrentMediaTime() + 2;
 transformAnima.removedOnCompletion = NO;
 transformAnima.fillMode = kCAFillModeForwards;
 ```
-解释：为什么动画结束后返回原状态？首先我们需要搞明白一点的是，layer动画运行的过程是怎样的？其实在我们给一个视图添加layer动画时，真正移动并不是我们的视图本身，而是 presentation layer 的一个缓存。动画开始时 presentation layer开始移动，原始layer隐藏，动画结束时，presentation layer从屏幕上移除，原始layer显示。这就解释了为什么我们的视图在动画结束后又回到了原来的状态，因为它根本就没动过。
-这个同样也可以解释为什么在动画移动过程中，我们为何不能对其进行任何操作。
+解释：
+1、为什么动画结束后返回原状态？
+1）我们需要搞明白一点的是，layer动画运行的过程是怎样的？其实在我们给一个视图添加layer动画时，真正移动并不是我们的视图本身，而是 presentation layer 的一个缓存。动画开始时 presentation layer开始移动，原始layer隐藏，动画结束时，presentation layer从屏幕上移除，原始layer显示。这就解释了为什么我们的视图在动画结束后又回到了原来的状态，因为它根本就没动过。
+2）这个同样也可以解释为什么在动画移动过程中，我们为何不能对其进行任何操作，比如添加手势。
 所以在我们完成layer动画之后，最好将我们的layer属性设置为我们最终状态的属性，然后将presentation layer 移除掉。
+
 添加动画
 ```
 [self.imageView.layer addAnimation:transformAnima forKey:@"A"];
@@ -185,7 +191,7 @@ CAShapeLayer与UIBezierPath的关系：
 ####CAShapeLayer与UIBezierPath画圆
 ```
 - (CAShapeLayer *)drawCircle {
-CAShapeLayer *circleLayer = [CAShapeLayer layer];
+ CAShapeLayer *circleLayer = [CAShapeLayer layer];
  // 指定frame，只是为了设置宽度和高度
  circleLayer.frame = CGRectMake(0, 0, 200, 200);
  // 设置居中显示
@@ -203,6 +209,7 @@ CAShapeLayer *circleLayer = [CAShapeLayer layer];
  circleLayer.path = circlePath.CGPath;
  // 将CAShaperLayer放到某个层上显示
  [self.view.layer addSublayer:circleLayer]; return circleLayer;}
+
 ```
 
 登录例子下载地址：
