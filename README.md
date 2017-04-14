@@ -215,11 +215,14 @@ CAShapeLayer与UIBezierPath的关系：
 登录例子下载地址：
 [demo下载地址](https://github.com/a130785/iosAnimationDemo)
 
-如果你都看到这里了，请给我**点个赞**吧，你的喜欢是我坚持原创的不竭动力。
 参考资料：
+
 [iOS 动画效果：Core Animation & Facebook](http://www.cocoachina.com/ios/20151223/14739.html)
+
 [拍电影与CABasicAnimation](http://www.jianshu.com/p/cd1bc0e82f4d)
-[标哥的技术博客](http://www.jianshu.com/p/734b34e82135)
+
 [CABasicAnimation使用总结](http://www.jianshu.com/p/02c341c748f9)
+
 [苹果文档](https://developer.apple.com/search/?q=CABasicAnimation&platform=iOS)
+
 [放肆的使用UIBezierPath和CAShapeLaye](http://www.jianshu.com/p/c5cbb5e05075)
