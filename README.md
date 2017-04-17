@@ -1,6 +1,7 @@
 # iosAnimationDemo
 
 转载至：[iosAnimationDemo](https://github.com/a130785/iosAnimationDemo)
+其中一个Demo 是Fork了[DanMuDemo](https://github.com/hailong123/DanMuDemo)
 
 iOS动画综合应用
 动效设计一直是iOS平台的优势，良好的动效设计可以很好地提升用户体验。而动画则是动效的基础支撑。本动画将从易到难逐步分析，从CABasicAnimation，UIBezierPath，CAShapeLayer三个方面完整的阐述iOS动画的实现。最终的效果如下：
