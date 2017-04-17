@@ -11,6 +11,7 @@
 
 @interface ViewController () <CAAnimationDelegate>
 
+// // 关键帧动画1
 @property (nonatomic, weak)    CALayer *movingLayer;
 @property (nonatomic, strong)  UITapGestureRecognizer *tapGesture;
 
@@ -76,6 +77,7 @@
                                   [NSValue valueWithCGPoint:CGPointMake(self.view.frame.size.width, 0)]];
     moveLayerAnimation.duration = 5.0;
     moveLayerAnimation.autoreverses = YES; //返回
+    moveLayerAnimation.removedOnCompletion = NO;
     moveLayerAnimation.repeatCount = INFINITY; //INFINITY
     moveLayerAnimation.calculationMode = kCAAnimationCubicPaced;
     moveLayerAnimation.timingFunction = [CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionLinear];
@@ -84,8 +86,6 @@
     [self.movingLayer addAnimation:moveLayerAnimation forKey:@"move"];
     
    
-    
-    
 #pragma mark 关键帧动画2
     // 设置背景()
     UIImage *backImage = [UIImage imageNamed:@"haha1"];
@@ -162,6 +162,8 @@
         [self.blockView completeAnimation];
         self.animating = NO;
     }];
+    
+    
 }
 
 -(void)click:(UITapGestureRecognizer *)tapGesture {
