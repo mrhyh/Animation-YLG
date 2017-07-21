@@ -219,7 +219,8 @@ CAShapeLayer与UIBezierPath的关系：
 [demo下载地址](https://github.com/a130785/iosAnimationDemo)
 
 摇摆动画示例图
-![%E6%91%87%E6%91%86%E5%8A%A8%E7%94%BB.gif](https://github.com/mrhyh/Animation-YLG/blob/master/%E6%91%87%E6%91%86%E5%8A%A8%E7%94%BBDemo/%E6%91%87%E6%91%86%E5%8A%A8%E7%94%BB.gif) 
+
+![%E6%91%87%E6%91%86%E5%8A%A8%E7%94%BB.gif](https://github.com/mrhyh/Animation-YLG/blob/master/%E6%91%87%E6%91%86%E5%8A%A8%E7%94%BBDemo/%E6%91%87%E6%91%86%E5%8A%A8%E7%94%BB.gif)
 
 参考资料：
 
