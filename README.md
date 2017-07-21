@@ -141,6 +141,8 @@ NSLog(@"动画组执行了");
 
 UIBezierPath是CGPathRef数据类型的封装。如果是基于矢量形状的路径，都用直线和曲线去创建。我们使用直线段去创建矩形和多边形，使用曲线去创建圆弧（arc）、圆或者其他复杂的曲线形状。
 
+
+
 ![87FE4D73-A87A-4B8C-9A0E-73941FA532EC.png](http://upload-images.jianshu.io/upload_images/1968278-cd183582ea9a9402.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ```
 + (instancetype)bezierPath;
@@ -215,6 +217,9 @@ CAShapeLayer与UIBezierPath的关系：
 
 登录例子下载地址：
 [demo下载地址](https://github.com/a130785/iosAnimationDemo)
+
+摇摆动画示例图
+![%E6%91%87%E6%91%86%E5%8A%A8%E7%94%BB.gif](https://github.com/mrhyh/Animation-YLG/blob/master/%E6%91%87%E6%91%86%E5%8A%A8%E7%94%BBDemo/%E6%91%87%E6%91%86%E5%8A%A8%E7%94%BB.gif) 
 
 参考资料：
 
