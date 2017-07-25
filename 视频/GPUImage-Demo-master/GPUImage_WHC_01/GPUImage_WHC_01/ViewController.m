@@ -16,12 +16,14 @@
 #define ScreenH [UIScreen mainScreen].bounds.size.height
 
 @interface ViewController ()
-@property(strong,nonatomic)GPUImageStillCamera *myCamera;
-@property(strong,nonatomic)GPUImageView *myGPUImageView;
-@property(strong,nonatomic)GPUImageFilter *myFilter;
-@property(copy,nonatomic)NSArray *filterArr;
-@property(weak,nonatomic)UISlider *mySlider;
-@property(strong,nonatomic)UIButton *selectedBtn;
+@property (strong,nonatomic) GPUImageStillCamera *myCamera;
+@property (strong,nonatomic) GPUImageView *myGPUImageView;
+@property (strong,nonatomic) GPUImageFilter *myFilter;
+@property (copy  ,nonatomic) NSArray *filterArr;
+@property (weak  ,nonatomic) UISlider *mySlider;
+@property (strong,nonatomic) UIButton *selectedBtn;
+
+@property (strong,nonatomic) UIScrollView *scrollView;
 
 @end
 
@@ -124,6 +126,20 @@
     [switchBtn addTarget:self action:@selector(switchIsChanged:) forControlEvents:UIControlEventTouchUpInside];
 
     [self.view addSubview:switchBtn];
+}
+
+- (UIScrollView *)scrollView {
+    if (nil == _scrollView) {
+        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, ScreenH-100, ScreenW, 100)];
+        _scrollView.contentSize = CGSizeMake(ScreenW, 100);
+        
+        
+        for (int i=0; i< self.filterArr.count; i++) {
+            
+        }
+        
+    }
+    return _scrollView;
 }
 
 //选择照片的风格

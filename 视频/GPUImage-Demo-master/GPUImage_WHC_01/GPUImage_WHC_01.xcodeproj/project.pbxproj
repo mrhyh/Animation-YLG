@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1877C8F91F272D8000F75F18 /* GPFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877C8F81F272D8000F75F18 /* GPFilterView.m */; };
 		2431190692C5DECB15F935DE /* libPods-GPUImage_WHC_01.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF64F23658300534DDD62FE9 /* libPods-GPUImage_WHC_01.a */; };
 		DA168D871E84C3F100B79947 /* photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA168D861E84C3F100B79947 /* photo2.png */; };
 		DA168D8A1E84D02800B79947 /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA168D881E84D02800B79947 /* photo1.png */; };
@@ -43,6 +44,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1877C8F71F272D8000F75F18 /* GPFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPFilterView.h; sourceTree = "<group>"; };
+		1877C8F81F272D8000F75F18 /* GPFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPFilterView.m; sourceTree = "<group>"; };
+		1877C8FC1F272F0C00F75F18 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
 		6F9E16332AD80126C7742224 /* Pods-GPUImage_WHC_01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPUImage_WHC_01.release.xcconfig"; path = "Pods/Target Support Files/Pods-GPUImage_WHC_01/Pods-GPUImage_WHC_01.release.xcconfig"; sourceTree = "<group>"; };
 		AF64F23658300534DDD62FE9 /* libPods-GPUImage_WHC_01.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GPUImage_WHC_01.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA168D861E84C3F100B79947 /* photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo2.png; sourceTree = "<group>"; };
@@ -99,6 +103,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1877C8F41F272D4800F75F18 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1877C8F51F272D5700F75F18 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1877C8F71F272D8000F75F18 /* GPFilterView.h */,
+				1877C8F81F272D8000F75F18 /* GPFilterView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		1877C8F61F272D5C00F75F18 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1877C8FA1F272ECC00F75F18 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				1877C8FB1F272EE000F75F18 /* Header */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		1877C8FB1F272EE000F75F18 /* Header */ = {
+			isa = PBXGroup;
+			children = (
+				1877C8FC1F272F0C00F75F18 /* Header.h */,
+			);
+			path = Header;
+			sourceTree = "<group>";
+		};
 		3E7AC938A841253791234085 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -141,6 +184,10 @@
 		DA4B995C1E8256A30023BC01 /* GPUImage_WHC_01 */ = {
 			isa = PBXGroup;
 			children = (
+				1877C8FA1F272ECC00F75F18 /* Common */,
+				1877C8F61F272D5C00F75F18 /* Controller */,
+				1877C8F51F272D5700F75F18 /* View */,
+				1877C8F41F272D4800F75F18 /* Model */,
 				DA168D911E84ED4200B79947 /* UIButton+Custom.h */,
 				DA168D921E84ED4300B79947 /* UIButton+Custom.m */,
 				DA168D8C1E84E2C900B79947 /* GPUImageBeautifyFilter.h */,
@@ -384,6 +431,7 @@
 				DA4B99651E8256A30023BC01 /* ViewController.m in Sources */,
 				DA168D8E1E84E2C900B79947 /* GPUImageBeautifyFilter.m in Sources */,
 				DA4B99621E8256A30023BC01 /* AppDelegate.m in Sources */,
+				1877C8F91F272D8000F75F18 /* GPFilterView.m in Sources */,
 				DA168D931E84ED4300B79947 /* UIButton+Custom.m in Sources */,
 				DA4B995F1E8256A30023BC01 /* main.m in Sources */,
 			);
