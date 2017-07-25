@@ -60,21 +60,56 @@ static const CGFloat GPFVImageWidth = 35;
     //美颜
     GPUImageBeautifyFilter *beautyFielter = [[GPUImageBeautifyFilter alloc] init];
     
+    //曝光
+    GPUImageExposureFilter *exposureFilter = [[GPUImageExposureFilter alloc] init];
+    
+    //对比度
+    GPUImageContrastFilter *contrastFilter = [[GPUImageContrastFilter alloc] init];
+    
+    //色阶
+    GPUImageLevelsFilter *levelsFilter = [[GPUImageLevelsFilter alloc] init];
+    
+    //灰度
+    GPUImageGrayscaleFilter *grayscaleFilter = [[GPUImageGrayscaleFilter alloc] init];
+    
+    //色彩直方图，显示在图片上
+    GPUImageHistogramFilter *histogramFilter = [[GPUImageHistogramFilter alloc] init];
+    
+    
+    //素描
+    GPUImageSketchFilter *sketchFilter = [[GPUImageSketchFilter alloc] init];
+    
+    
+    //曝光
+    GPUImageExposureFilter *exposureFilter = [[GPUImageExposureFilter alloc] init];
+    
+    //曝光
+    GPUImageExposureFilter *exposureFilter = [[GPUImageExposureFilter alloc] init];
+    
+    
+    //曝光
+    GPUImageExposureFilter *exposureFilter = [[GPUImageExposureFilter alloc] init];
+    
+    
+    //曝光
+    GPUImageExposureFilter *exposureFilter = [[GPUImageExposureFilter alloc] init];
+    */
+    
     //初始化滤镜数组
-    self.filterArr = @[stretchDistortionFilter,BrightnessFilter,gammaFilter,XYDerivativeFilter,sepiaFilter,invertFilter,saturationFilter,beautyFielter];
+    self.filterArr = @[stretchDistortionFilter,BrightnessFilter,gammaFilter,XYDerivativeFilter,sepiaFilter,invertFilter,saturationFilter,beautyFielter,exposureFilter,contrastFilter,saturationFilter,levelsFilter, grayscaleFilter, histogramFilter, sketchFilter];
 }
 
 - (void)setup {
     
     _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
-    _scrollView.contentSize =  CGSizeMake(GPFVImageWidth * 11 + GPFVImageToImageSpace * 12,0);
+    _scrollView.contentSize =  CGSizeMake(GPFVImageWidth * self.filterArr.count + GPFVImageToImageSpace * (self.filterArr.count + 1),0);
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.backgroundColor = [UIColor whiteColor];
     _scrollView.pagingEnabled = YES;
     _scrollView.delegate = self;
     [self addSubview:_scrollView];
     
-    for (int i=0; i<11; i++) {
+    for (int i=0; i<self.filterArr.count; i++) {
         UIView *view = [self createImageViewButtonWithX:((GPFVImageToImageSpace + GPFVImageWidth) * i) forIndex:i];
         view.tag = i;
         [_scrollView addSubview:view];
@@ -84,12 +119,11 @@ static const CGFloat GPFVImageWidth = 35;
         tapGesture.numberOfTouchesRequired = 1;
         [view addGestureRecognizer:tapGesture];
     }
-
 }
 
 - (UIView *)createImageViewButtonWithX:(CGFloat)x forIndex:(int)index {
-    NSArray *imageNameArray = @[@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg"];
-    NSArray *nameArray = @[@"哈哈镜",@"亮度",@"伽马线",@"边缘检测",@"怀旧",@"反色",@"饱和度",@"美颜",@"新浪微博",@"新浪微博",@"新浪微博",@"新浪微博",@"新浪微博"];
+    NSArray *imageNameArray = @[@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg", @"img1.jpg"];
+    NSArray *nameArray = @[@"哈哈镜",@"亮度",@"伽马线",@"边缘检测",@"怀旧",@"反色",@"饱和度",@"美颜",@"曝光",@"对比度",@"饱和度",@"色阶",@"灰度",@"色彩直方图",@"素描"];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, 0,(CGRectGetWidth(self.frame) - 2*GPFVImageToImageSpace)/4.0 , 100)];
     
