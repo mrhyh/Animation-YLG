@@ -1,0 +1,23 @@
+/* A single strings file, whose title is specified in your preferences schema. The strings files provide the localized content to display to the user for each of your preferences. */
+"User Interface" = "User Interface";
+"Toolbar on bottom" = "Toolbar on bottom";
+"Dark interface" = "Dark interface";
+"Search engine" = "Search engine";
+"Custom home page" = "Custom home page";
+"If blank, the search engine page will be used" = "If blank, the search engine page will be used";
+"Privacy" = "Privacy";
+"Send Do-Not-Track header" = "Send Do-Not-Track header";
+"Edit cookies and local storage" = "Edit cookies and local storage";
+"Cookie auto-sweep interval" = "Cookie auto-sweep interval";
+"Cookies and local storage data from non-whitelisted hosts will be cleared even from open tabs after not being accessed for this many minutes" = "Cookies and local storage data from non-whitelisted hosts will be cleared even from open tabs after not being accessed for this many minutes";
+"Clear all when backgrounded" = "Clear all when backgrounded";
+"When switching to another app, close all tabs and clear non-whitelisted cookies" = "When switching to another app, close all tabs and clear non-whitelisted cookies";
+"Allow 3rd party keyboards" = "Allow 3rd party keyboards";
+"Changing this option requires restarting the app" = "Changing this option requires restarting the app";
+"Support" = "Support";
+"Report a bug" = "Report a bug";
+"Miscellaneous" = "Miscellaneous";
+"Rate on App Store" = "Rate on App Store";
+"About" = "About";
+"About Endless" = "About Endless";
+"Fund Endless development" = "Fund Endless development";
