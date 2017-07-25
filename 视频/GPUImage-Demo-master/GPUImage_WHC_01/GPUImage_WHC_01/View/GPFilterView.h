@@ -8,7 +8,17 @@
 
 #import <UIKit/UIKit.h>
 #import "Header.h"
+#import "GPBaseView.h"
 
-@interface GPFilterView : UIView
+@protocol GPFilterViewDelegate <NSObject>
 
+- (void)filterViewImageClickWithIndex:(NSInteger)selectIndex;
+
+@end
+
+@interface GPFilterView : GPBaseView
+
+@property (nonatomic, weak)   id <GPFilterViewDelegate> delegate;
+
+@property (nonatomic, strong) NSArray *filterArr;
 @end

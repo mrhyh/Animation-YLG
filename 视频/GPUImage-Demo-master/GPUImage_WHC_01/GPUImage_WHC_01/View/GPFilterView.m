@@ -7,10 +7,11 @@
 //
 
 #import "GPFilterView.h"
+#import "GPUImageBeautifyFilter.h"
 
 static const CGFloat GPFVImageWidth = 35;
 
-#define GPFVImageToImageSpace  ((ScreenW - 5*GPFVImageWidth)/6.0)
+#define GPFVImageToImageSpace  ((kScreenWidth - 5*GPFVImageWidth)/6.0)
 
 @interface GPFilterView () <UIScrollViewDelegate>
 
@@ -27,24 +28,54 @@ static const CGFloat GPFVImageWidth = 35;
     self = [super initWithFrame:frame];
     
     if (self) {
+        [self initData];
         [self setup];
     }
     
     return self;
 }
 
+- (void) initData {
+    //哈哈镜效果
+    GPUImageStretchDistortionFilter *stretchDistortionFilter = [[GPUImageStretchDistortionFilter alloc] init];
+    
+    //亮度
+    GPUImageBrightnessFilter *BrightnessFilter = [[GPUImageBrightnessFilter alloc] init];
+    
+    //伽马线滤镜
+    GPUImageGammaFilter *gammaFilter = [[GPUImageGammaFilter alloc] init];
+    
+    //边缘检测
+    GPUImageXYDerivativeFilter *XYDerivativeFilter = [[GPUImageXYDerivativeFilter alloc] init];
+    
+    //怀旧
+    GPUImageSepiaFilter *sepiaFilter = [[GPUImageSepiaFilter alloc] init];
+    
+    //反色
+    GPUImageColorInvertFilter *invertFilter = [[GPUImageColorInvertFilter alloc] init];
+    
+    //饱和度
+    GPUImageSaturationFilter *saturationFilter = [[GPUImageSaturationFilter alloc] init];
+    
+    //美颜
+    GPUImageBeautifyFilter *beautyFielter = [[GPUImageBeautifyFilter alloc] init];
+    
+    //初始化滤镜数组
+    self.filterArr = @[stretchDistortionFilter,BrightnessFilter,gammaFilter,XYDerivativeFilter,sepiaFilter,invertFilter,saturationFilter,beautyFielter];
+}
+
 - (void)setup {
-    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, ScreenH-100, ScreenW, 100)];
-    _scrollView.contentSize = CGSizeMake(ScreenW, 100);
-    _scrollView.contentSize =  CGSizeMake(GPFVImageWidth * 5,0);
+    
+    _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+    _scrollView.contentSize =  CGSizeMake(GPFVImageWidth * 11 + GPFVImageToImageSpace * 12,0);
     _scrollView.showsHorizontalScrollIndicator = NO;
     _scrollView.backgroundColor = [UIColor whiteColor];
     _scrollView.pagingEnabled = YES;
     _scrollView.delegate = self;
+    [self addSubview:_scrollView];
     
-    
-    for (int i=0; i<6; i++) {
-        UIView *view = [self createImageViewButtonWithX:((GPFVImageToImageSpace * 2 + GPFVImageWidth) * i) forIndex:i];
+    for (int i=0; i<11; i++) {
+        UIView *view = [self createImageViewButtonWithX:((GPFVImageToImageSpace + GPFVImageWidth) * i) forIndex:i];
         view.tag = i;
         [_scrollView addSubview:view];
         
@@ -53,16 +84,19 @@ static const CGFloat GPFVImageWidth = 35;
         tapGesture.numberOfTouchesRequired = 1;
         [view addGestureRecognizer:tapGesture];
     }
+
 }
 
 - (UIView *)createImageViewButtonWithX:(CGFloat)x forIndex:(int)index {
-    NSArray *imageNameArray = @[@"live_save",@"shareicon_wechat.png",@"wechatmoments.png",@"shareicon_qq.png",@"shareicon_qqzone.png",@"shareicon_weibo.png"];
-    NSArray *nameArray = @[@"保存",@"微信好友",@"朋友圈",@"QQ好友",@"QQ空间",@"新浪微博"];
+    NSArray *imageNameArray = @[@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg"];
+    NSArray *nameArray = @[@"哈哈镜",@"亮度",@"伽马线",@"边缘检测",@"怀旧",@"反色",@"饱和度",@"美颜",@"新浪微博",@"新浪微博",@"新浪微博",@"新浪微博",@"新浪微博"];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, 0,(CGRectGetWidth(self.frame) - 2*GPFVImageToImageSpace)/4.0 , 100)];
     
     UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(GPFVImageToImageSpace, 15, GPFVImageWidth, GPFVImageWidth)];
     [imageView setImage:[UIImage imageNamed:imageNameArray[index]]];
+    imageView.layer.cornerRadius = GPFVImageWidth/2.0;
+    imageView.layer.masksToBounds = YES;
     [view addSubview:imageView];
     
     UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(GPFVImageToImageSpace/3.0, CGRectGetMaxY(imageView.frame) + 10, CGRectGetWidth(view.frame) - 2 * GPFVImageToImageSpace/3, 20)];
@@ -76,23 +110,14 @@ static const CGFloat GPFVImageWidth = 35;
 }
 
 
-
 - (void)scrollViewItemClick:(UITapGestureRecognizer *)recognizer {
     UIView *view = recognizer.view;
     NSLog(@"点击的View的Tag是：%ld",(long)view.tag);
 
-    
-//    if ([self.delegate respondsToSelector:@selector(tyliveShareView:selectShareIndex:)]) {
-//        [self.delegate tyliveShareView:self selectShareIndex:view.tag];
-//    }
+    if ([self.delegate respondsToSelector:@selector(filterViewImageClickWithIndex:)]) {
+        [self.delegate filterViewImageClickWithIndex:view.tag];
+    }
 }
 
-/*
-// Only override drawRect: if you perform custom drawing.
-// An empty implementation adversely affects performance during animation.
-- (void)drawRect:(CGRect)rect {
-    // Drawing code
-}
-*/
 
 @end

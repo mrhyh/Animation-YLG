@@ -11,11 +11,10 @@
 #import "GPUImageBeautifyFilter.h"
 #import <Photos/Photos.h>
 #import "UIButton+Custom.h"
+#import "GPFilterView.h"
 
-#define ScreenW [UIScreen mainScreen].bounds.size.width
-#define ScreenH [UIScreen mainScreen].bounds.size.height
+@interface ViewController () <GPFilterViewDelegate>
 
-@interface ViewController ()
 @property (strong,nonatomic) GPUImageStillCamera *myCamera;
 @property (strong,nonatomic) GPUImageView *myGPUImageView;
 @property (strong,nonatomic) GPUImageFilter *myFilter;
@@ -23,7 +22,7 @@
 @property (weak  ,nonatomic) UISlider *mySlider;
 @property (strong,nonatomic) UIButton *selectedBtn;
 
-@property (strong,nonatomic) UIScrollView *scrollView;
+@property (strong,nonatomic) GPFilterView *filterView;
 
 @end
 
@@ -68,7 +67,7 @@
     self.filterArr = @[stretchDistortionFilter,BrightnessFilter,gammaFilter,XYDerivativeFilter,sepiaFilter,invertFilter,saturationFilter,beautyFielter];
     
     //初始化GPUImageView
-    self.myGPUImageView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 0, ScreenW, ScreenH)];
+    self.myGPUImageView = [[GPUImageView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, kScreenHeight)];
     
     //初始设置为哈哈镜效果
     [self.myCamera addTarget:stretchDistortionFilter];
@@ -95,8 +94,8 @@
         [btn setBackgroundColor:[UIColor lightGrayColor]];
         btn.alpha = 0.6;
         btn.tag = i + 100;
-        [btn addTarget:self action:@selector(filterStyleIsClicked:) forControlEvents:UIControlEventTouchUpInside];
-        [self.view addSubview:btn];
+        //[btn addTarget:self action:@selector(filterStyleIsClicked:) forControlEvents:UIControlEventTouchUpInside];
+        //[self.view addSubview:btn];
         if (0 == i) {
             _selectedBtn = btn;
             [btn setBackgroundColor:[UIColor blueColor]];
@@ -105,13 +104,13 @@
     
     //照相的按钮
     UIButton *catchImageBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    catchImageBtn.frame = CGRectMake((ScreenW-60)/2, ScreenH-80, 60, 60);
+    catchImageBtn.frame = CGRectMake((kScreenWidth-60)/2, kScreenHeight-80, 60, 60);
     [catchImageBtn addTarget:self action:@selector(capturePhoto:) forControlEvents:UIControlEventTouchUpInside];
     [catchImageBtn setBackgroundImage:[UIImage imageNamed:@"photo.png"] forState:UIControlStateNormal];
     [self.view addSubview:catchImageBtn];
     
     // UISlider
-    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake((ScreenW-200)/2, ScreenH-130, 200, 30)];
+    UISlider *slider = [[UISlider alloc] initWithFrame:CGRectMake((kScreenWidth-200)/2, kScreenHeight-130, 200, 30)];
     slider.value = 0.5;
     [slider addTarget:self action:@selector(sliderValueChanged:) forControlEvents:UIControlEventValueChanged];
     [self.view addSubview:slider];
@@ -121,25 +120,19 @@
     UIButton *switchBtn = [UIButton buttonWithType:UIButtonTypeCustom];
     //设置2s内不可以连续点击,防止用户连续点击
     switchBtn.custom_acceptEventInterval = 1;
-    switchBtn.frame = CGRectMake(ScreenW-60, 30, 44, 35);
+    switchBtn.frame = CGRectMake(kScreenWidth-60, 30, 44, 35);
     [switchBtn setImage:[UIImage imageNamed:@"switch.png"] forState:UIControlStateNormal];
     [switchBtn addTarget:self action:@selector(switchIsChanged:) forControlEvents:UIControlEventTouchUpInside];
 
     [self.view addSubview:switchBtn];
-}
-
-- (UIScrollView *)scrollView {
-    if (nil == _scrollView) {
-        _scrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(0, ScreenH-100, ScreenW, 100)];
-        _scrollView.contentSize = CGSizeMake(ScreenW, 100);
-        
-        
-        for (int i=0; i< self.filterArr.count; i++) {
-            
-        }
-        
-    }
-    return _scrollView;
+    
+    
+    _filterView = [[GPFilterView alloc] initWithFrame:CGRectMake(0, kScreenHeight-100, kScreenWidth, 100)];
+    _filterView.delegate = self;
+    _filterView.backgroundColor = [UIColor grayColor];
+    [self.view addSubview:_filterView];
+    
+    
 }
 
 //选择照片的风格
@@ -207,6 +200,24 @@
         }];
         
     }];
+}
+
+
+#pragma mark GPFilterViewDelegate 
+
+- (void)filterViewImageClickWithIndex:(NSInteger)selectIndex {
+    self.mySlider.value = 0.5;
+    if (3 == (selectIndex) || 4 == (selectIndex) || 5 == (selectIndex) || 7 == (selectIndex)) {
+        self.mySlider.hidden = YES;
+    }else{
+        self.mySlider.hidden = NO;
+    }
+    GPUImageFilter *filter = _filterView.filterArr[selectIndex];
+    [self.myCamera removeAllTargets];
+    [self.myCamera addTarget:filter];
+    [filter addTarget:self.myGPUImageView];
+    
+    self.myFilter = filter;
 }
 
 

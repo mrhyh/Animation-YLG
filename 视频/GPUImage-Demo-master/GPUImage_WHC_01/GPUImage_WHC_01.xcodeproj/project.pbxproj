@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		1877C8F91F272D8000F75F18 /* GPFilterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877C8F81F272D8000F75F18 /* GPFilterView.m */; };
+		1877C8FF1F27322800F75F18 /* GPBaseView.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877C8FE1F27322800F75F18 /* GPBaseView.m */; };
+		1877C9021F2739B600F75F18 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877C9011F2739B600F75F18 /* ViewController.m */; };
 		2431190692C5DECB15F935DE /* libPods-GPUImage_WHC_01.a in Frameworks */ = {isa = PBXBuildFile; fileRef = AF64F23658300534DDD62FE9 /* libPods-GPUImage_WHC_01.a */; };
 		DA168D871E84C3F100B79947 /* photo2.png in Resources */ = {isa = PBXBuildFile; fileRef = DA168D861E84C3F100B79947 /* photo2.png */; };
 		DA168D8A1E84D02800B79947 /* photo1.png in Resources */ = {isa = PBXBuildFile; fileRef = DA168D881E84D02800B79947 /* photo1.png */; };
@@ -17,7 +19,6 @@
 		DA168D971E84F45400B79947 /* switch.png in Resources */ = {isa = PBXBuildFile; fileRef = DA168D961E84F45400B79947 /* switch.png */; };
 		DA4B995F1E8256A30023BC01 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4B995E1E8256A30023BC01 /* main.m */; };
 		DA4B99621E8256A30023BC01 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4B99611E8256A30023BC01 /* AppDelegate.m */; };
-		DA4B99651E8256A30023BC01 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DA4B99641E8256A30023BC01 /* ViewController.m */; };
 		DA4B99681E8256A30023BC01 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4B99661E8256A30023BC01 /* Main.storyboard */; };
 		DA4B996A1E8256A30023BC01 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA4B99691E8256A30023BC01 /* Assets.xcassets */; };
 		DA4B996D1E8256A30023BC01 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA4B996B1E8256A30023BC01 /* LaunchScreen.storyboard */; };
@@ -47,6 +48,10 @@
 		1877C8F71F272D8000F75F18 /* GPFilterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPFilterView.h; sourceTree = "<group>"; };
 		1877C8F81F272D8000F75F18 /* GPFilterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPFilterView.m; sourceTree = "<group>"; };
 		1877C8FC1F272F0C00F75F18 /* Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Header.h; sourceTree = "<group>"; };
+		1877C8FD1F27322800F75F18 /* GPBaseView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPBaseView.h; sourceTree = "<group>"; };
+		1877C8FE1F27322800F75F18 /* GPBaseView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPBaseView.m; sourceTree = "<group>"; };
+		1877C9001F2739AD00F75F18 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		1877C9011F2739B600F75F18 /* ViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		6F9E16332AD80126C7742224 /* Pods-GPUImage_WHC_01.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GPUImage_WHC_01.release.xcconfig"; path = "Pods/Target Support Files/Pods-GPUImage_WHC_01/Pods-GPUImage_WHC_01.release.xcconfig"; sourceTree = "<group>"; };
 		AF64F23658300534DDD62FE9 /* libPods-GPUImage_WHC_01.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-GPUImage_WHC_01.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DA168D861E84C3F100B79947 /* photo2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = photo2.png; sourceTree = "<group>"; };
@@ -61,8 +66,6 @@
 		DA4B995E1E8256A30023BC01 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		DA4B99601E8256A30023BC01 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DA4B99611E8256A30023BC01 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		DA4B99631E8256A30023BC01 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		DA4B99641E8256A30023BC01 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		DA4B99671E8256A30023BC01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		DA4B99691E8256A30023BC01 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		DA4B996C1E8256A30023BC01 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -113,6 +116,8 @@
 		1877C8F51F272D5700F75F18 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				1877C8FD1F27322800F75F18 /* GPBaseView.h */,
+				1877C8FE1F27322800F75F18 /* GPBaseView.m */,
 				1877C8F71F272D8000F75F18 /* GPFilterView.h */,
 				1877C8F81F272D8000F75F18 /* GPFilterView.m */,
 			);
@@ -122,6 +127,8 @@
 		1877C8F61F272D5C00F75F18 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				1877C9001F2739AD00F75F18 /* ViewController.h */,
+				1877C9011F2739B600F75F18 /* ViewController.m */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -194,8 +201,6 @@
 				DA168D8D1E84E2C900B79947 /* GPUImageBeautifyFilter.m */,
 				DA4B99601E8256A30023BC01 /* AppDelegate.h */,
 				DA4B99611E8256A30023BC01 /* AppDelegate.m */,
-				DA4B99631E8256A30023BC01 /* ViewController.h */,
-				DA4B99641E8256A30023BC01 /* ViewController.m */,
 				DA4B99661E8256A30023BC01 /* Main.storyboard */,
 				DA4B99691E8256A30023BC01 /* Assets.xcassets */,
 				DA4B996B1E8256A30023BC01 /* LaunchScreen.storyboard */,
@@ -428,9 +433,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DA4B99651E8256A30023BC01 /* ViewController.m in Sources */,
+				1877C9021F2739B600F75F18 /* ViewController.m in Sources */,
 				DA168D8E1E84E2C900B79947 /* GPUImageBeautifyFilter.m in Sources */,
 				DA4B99621E8256A30023BC01 /* AppDelegate.m in Sources */,
+				1877C8FF1F27322800F75F18 /* GPBaseView.m in Sources */,
 				1877C8F91F272D8000F75F18 /* GPFilterView.m in Sources */,
 				DA168D931E84ED4300B79947 /* UIButton+Custom.m in Sources */,
 				DA4B995F1E8256A30023BC01 /* main.m in Sources */,

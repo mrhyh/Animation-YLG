@@ -12,8 +12,22 @@
 
 #endif /* Header_h */
 
-#define ScreenW [UIScreen mainScreen].bounds.size.width
-#define ScreenH [UIScreen mainScreen].bounds.size.height
+//尺寸常量
+#define kScreenWidth        ([UIScreen mainScreen].bounds.size.width)
+#define kScreenHeight       ([UIScreen mainScreen].bounds.size.height)
+#define kSeparateLineHeight (1.f/[UIScreen mainScreen].scale)
+
+#define kDeviceSysVersion ([[UIDevice currentDevice].systemVersion floatValue])
+
+#define isiPhone5  ([UIScreen mainScreen].bounds.size.width == 320)
+
+#define kIsLandscape    (UIInterfaceOrientationIsLandscape([UIApplication sharedApplication].statusBarOrientation))
+
+static const float kNavHeight=44.0;
+static const float kTabHeight=49.0;
+static const float kStatusHeight=20.0;
+static const int KTextnumber = 140;
+static const int KLeftbarWidth = 60;//论坛入口侧边栏宽度
 
 //宏定义
 #define _Use_BaiduMobStat_
@@ -32,7 +46,6 @@ typedef void (^BlockVoid)(void);
 
 #define iPhonePlus ([UIScreen instancesRespondToSelector:@selector(currentMode)] ? CGSizeEqualToSize(CGSizeMake(1242,2208), [[UIScreen mainScreen] currentMode].size) : NO)
 
-//#define FrameFloat(w)    (iPhone4S?(w-8):(iPhone5 ? (w-8): (iPhonePlus ? (w+3):w)))
 #define FrameFloat(w)    (iPhone4S?w* 0.64:(iPhone5 ? w* 0.85: (iPhonePlus ? w*1.1:w)))
 #define FrameSizeMake(w,h)  CGSizeMake(FrameFloat(w),FrameFloat(h))
 
