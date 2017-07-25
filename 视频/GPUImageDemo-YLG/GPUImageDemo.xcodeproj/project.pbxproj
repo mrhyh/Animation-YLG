@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1877C8F21F27158B00F75F18 /* SimpleVideoFileFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1877C8F01F27158B00F75F18 /* SimpleVideoFileFilterViewController.m */; };
+		1877C8F31F27158B00F75F18 /* SimpleVideoFileFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1877C8F11F27158B00F75F18 /* SimpleVideoFileFilterViewController.xib */; };
 		FBAC32991D2A2CE900C451B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAC32981D2A2CE900C451B2 /* main.m */; };
 		FBAC329C1D2A2CE900C451B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAC329B1D2A2CE900C451B2 /* AppDelegate.m */; };
 		FBAC329F1D2A2CE900C451B2 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAC329E1D2A2CE900C451B2 /* ViewController.m */; };
@@ -280,8 +282,6 @@
 		FBAC35B71D2A2E7200C451B2 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAC35B61D2A2E7200C451B2 /* AVFoundation.framework */; };
 		FBAC35B91D2A2E7600C451B2 /* AssetsLibrary.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAC35B81D2A2E7600C451B2 /* AssetsLibrary.framework */; };
 		FBAC35BB1D2A2E7C00C451B2 /* MediaPlayer.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FBAC35BA1D2A2E7C00C451B2 /* MediaPlayer.framework */; };
-		FBAC35BF1D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAC35BC1D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.m */; };
-		FBAC35C01D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAC35BD1D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.xib */; };
 		FBAC35C41D2A2FBD00C451B2 /* CustomImageCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = FBAC35C11D2A2FBD00C451B2 /* CustomImageCell.xib */; };
 		FBAC35C51D2A2FBD00C451B2 /* CustomImageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAC35C31D2A2FBD00C451B2 /* CustomImageCell.m */; };
 		FBAC35D11D2A2FFE00C451B2 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = FBAC35C81D2A2FFE00C451B2 /* SVIndefiniteAnimatedView.m */; };
@@ -370,6 +370,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1877C8EF1F27158B00F75F18 /* SimpleVideoFileFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleVideoFileFilterViewController.h; sourceTree = "<group>"; };
+		1877C8F01F27158B00F75F18 /* SimpleVideoFileFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleVideoFileFilterViewController.m; sourceTree = "<group>"; };
+		1877C8F11F27158B00F75F18 /* SimpleVideoFileFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleVideoFileFilterViewController.xib; sourceTree = "<group>"; };
 		FBAC32941D2A2CE900C451B2 /* GPUImageDemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GPUImageDemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FBAC32981D2A2CE900C451B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		FBAC329A1D2A2CE900C451B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -866,9 +869,6 @@
 		FBAC35B61D2A2E7200C451B2 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		FBAC35B81D2A2E7600C451B2 /* AssetsLibrary.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AssetsLibrary.framework; path = System/Library/Frameworks/AssetsLibrary.framework; sourceTree = SDKROOT; };
 		FBAC35BA1D2A2E7C00C451B2 /* MediaPlayer.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MediaPlayer.framework; path = System/Library/Frameworks/MediaPlayer.framework; sourceTree = SDKROOT; };
-		FBAC35BC1D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SimpleVideoFileFilterViewController.m; sourceTree = "<group>"; };
-		FBAC35BD1D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SimpleVideoFileFilterViewController.xib; sourceTree = "<group>"; };
-		FBAC35BE1D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SimpleVideoFileFilterViewController.h; sourceTree = "<group>"; };
 		FBAC35C11D2A2FBD00C451B2 /* CustomImageCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CustomImageCell.xib; sourceTree = "<group>"; };
 		FBAC35C21D2A2FBD00C451B2 /* CustomImageCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomImageCell.h; sourceTree = "<group>"; };
 		FBAC35C31D2A2FBD00C451B2 /* CustomImageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomImageCell.m; sourceTree = "<group>"; };
@@ -986,14 +986,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1877C8EE1F27158B00F75F18 /* Controlller */ = {
+			isa = PBXGroup;
+			children = (
+				1877C8EF1F27158B00F75F18 /* SimpleVideoFileFilterViewController.h */,
+				1877C8F01F27158B00F75F18 /* SimpleVideoFileFilterViewController.m */,
+				1877C8F11F27158B00F75F18 /* SimpleVideoFileFilterViewController.xib */,
+			);
+			path = Controlller;
+			sourceTree = "<group>";
+		};
 		FBAC328B1D2A2CE900C451B2 = {
 			isa = PBXGroup;
 			children = (
-				FBAC35BA1D2A2E7C00C451B2 /* MediaPlayer.framework */,
-				FBAC35B81D2A2E7600C451B2 /* AssetsLibrary.framework */,
-				FBAC35B61D2A2E7200C451B2 /* AVFoundation.framework */,
-				FBAC35B41D2A2E6E00C451B2 /* OpenGLES.framework */,
-				FBAC35B21D2A2E6A00C451B2 /* UIKit.framework */,
 				FBAC32961D2A2CE900C451B2 /* GPUImageDemo */,
 				FBAC32951D2A2CE900C451B2 /* Products */,
 			);
@@ -1011,14 +1016,15 @@
 			isa = PBXGroup;
 			children = (
 				FBAC36851D2A4AEA00C451B2 /* video.gif */,
+				1877C8EE1F27158B00F75F18 /* Controlller */,
 				FBAC32AE1D2A2D1700C451B2 /* CustomGPUImage */,
 				FBAC329A1D2A2CE900C451B2 /* AppDelegate.h */,
 				FBAC329B1D2A2CE900C451B2 /* AppDelegate.m */,
 				FBAC329D1D2A2CE900C451B2 /* ViewController.h */,
 				FBAC329E1D2A2CE900C451B2 /* ViewController.m */,
-				FBAC32A01D2A2CE900C451B2 /* Main.storyboard */,
 				FBAC32A31D2A2CE900C451B2 /* Assets.xcassets */,
 				FBAC32A51D2A2CE900C451B2 /* LaunchScreen.storyboard */,
+				FBAC32A01D2A2CE900C451B2 /* Main.storyboard */,
 				FBAC32A81D2A2CE900C451B2 /* Info.plist */,
 				FBAC32971D2A2CE900C451B2 /* Supporting Files */,
 				FBAC35B11D2A2D6400C451B2 /* GPUImage-PrefixHeader.pch */,
@@ -1029,6 +1035,11 @@
 		FBAC32971D2A2CE900C451B2 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				FBAC35BA1D2A2E7C00C451B2 /* MediaPlayer.framework */,
+				FBAC35B81D2A2E7600C451B2 /* AssetsLibrary.framework */,
+				FBAC35B61D2A2E7200C451B2 /* AVFoundation.framework */,
+				FBAC35B41D2A2E6E00C451B2 /* OpenGLES.framework */,
+				FBAC35B21D2A2E6A00C451B2 /* UIKit.framework */,
 				FBAC32981D2A2CE900C451B2 /* main.m */,
 			);
 			name = "Supporting Files";
@@ -1644,9 +1655,6 @@
 				FBAC35C11D2A2FBD00C451B2 /* CustomImageCell.xib */,
 				FBAC35C21D2A2FBD00C451B2 /* CustomImageCell.h */,
 				FBAC35C31D2A2FBD00C451B2 /* CustomImageCell.m */,
-				FBAC35BC1D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.m */,
-				FBAC35BD1D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.xib */,
-				FBAC35BE1D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.h */,
 				FBAC34901D2A2D1800C451B2 /* FWButton.h */,
 				FBAC34911D2A2D1800C451B2 /* FWButton.m */,
 				FBAC34921D2A2D1800C451B2 /* FWCropRectView.h */,
@@ -1948,7 +1956,6 @@
 				FBAC363C1D2A360300C451B2 /* g_tabbar_ic_video_down.png in Resources */,
 				FBAC357E1D2A2D1800C451B2 /* nashvilleMap.png in Resources */,
 				FBAC358F1D2A2D1800C451B2 /* waldenMap.png in Resources */,
-				FBAC35C01D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.xib in Resources */,
 				FBAC35851D2A2D1800C451B2 /* sutroEdgeBurn.png in Resources */,
 				FBAC356A1D2A2D1800C451B2 /* blackboard1024.png in Resources */,
 				FBAC364D1D2A360300C451B2 /* record_flashlight_disable.png in Resources */,
@@ -2006,6 +2013,7 @@
 				FBAC358E1D2A2D1800C451B2 /* vignetteMap.png in Resources */,
 				FBAC36751D2A360300C451B2 /* vedio_nav_btn_back_pre.png in Resources */,
 				FBAC36401D2A360300C451B2 /* photo_close_icon@2x.png in Resources */,
+				1877C8F31F27158B00F75F18 /* SimpleVideoFileFilterViewController.xib in Resources */,
 				FBAC35761D2A2D1800C451B2 /* hefeMap.png in Resources */,
 				FBAC35891D2A2D1800C451B2 /* toasterMetal.png in Resources */,
 				FBAC36721D2A360300C451B2 /* touch_focus_not@2x.png in Resources */,
@@ -2047,6 +2055,7 @@
 				FBAC34FE1D2A2D1800C451B2 /* GPUImageLaplacianFilter.m in Sources */,
 				FBAC35AC1D2A2D1800C451B2 /* FWSlider.m in Sources */,
 				FBAC35441D2A2D1800C451B2 /* GPUImageWeakPixelInclusionFilter.m in Sources */,
+				1877C8F21F27158B00F75F18 /* SimpleVideoFileFilterViewController.m in Sources */,
 				FBAC35D41D2A2FFE00C451B2 /* SVProgressHUD.m in Sources */,
 				FBAC34C41D2A2D1800C451B2 /* GPUImageBrightnessFilter.m in Sources */,
 				FBAC34A81D2A2D1800C451B2 /* FW1977Filter.m in Sources */,
@@ -2089,7 +2098,6 @@
 				FBAC34B11D2A2D1800C451B2 /* FWLordKelvinFilter.m in Sources */,
 				FBAC34C11D2A2D1800C451B2 /* GPUImageAverageLuminanceThresholdFilter.m in Sources */,
 				FBAC34C51D2A2D1800C451B2 /* GPUImageBulgeDistortionFilter.m in Sources */,
-				FBAC35BF1D2A2E9E00C451B2 /* SimpleVideoFileFilterViewController.m in Sources */,
 				FBAC34D21D2A2D1800C451B2 /* GPUImageColourFASTFeatureDetector.m in Sources */,
 				FBAC35C51D2A2FBD00C451B2 /* CustomImageCell.m in Sources */,
 				FBAC35211D2A2D1800C451B2 /* GPUImageRGBOpeningFilter.m in Sources */,
