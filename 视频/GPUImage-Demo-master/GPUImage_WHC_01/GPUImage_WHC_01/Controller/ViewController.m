@@ -16,9 +16,9 @@
 @interface ViewController () <GPFilterViewDelegate>
 
 @property (strong,nonatomic) GPUImageStillCamera *myCamera;
-@property (strong,nonatomic) GPUImageView *myGPUImageView;
-@property (strong,nonatomic) GPUImageFilter *myFilter;
-@property (copy  ,nonatomic) NSArray *filterArr;
+@property (strong,nonatomic) GPUImageView        *myGPUImageView;
+@property (strong,nonatomic) GPUImageFilter      *myFilter;
+@property (copy  ,nonatomic) NSArray  *filterArr;
 @property (weak  ,nonatomic) UISlider *mySlider;
 @property (strong,nonatomic) UIButton *selectedBtn;
 
@@ -212,12 +212,24 @@
     }else{
         self.mySlider.hidden = NO;
     }
-    GPUImageFilter *filter = _filterView.filterArr[selectIndex];
-    [self.myCamera removeAllTargets];
-    [self.myCamera addTarget:filter];
-    [filter addTarget:self.myGPUImageView];
     
-    self.myFilter = filter;
+    if ([_filterView.filterArr[selectIndex] isKindOfClass:[GPUImageFilterGroup class]] ) {
+        // 组合滤镜
+        GPUImageFilterGroup *groupFliter = _filterView.filterArr[selectIndex];
+        
+        [self.myCamera removeAllTargets];
+        [self.myCamera addTarget:groupFliter];
+        [groupFliter addTarget:self.myGPUImageView];
+        
+    }else {
+        GPUImageFilter *filter = _filterView.filterArr[selectIndex];
+        [self.myCamera removeAllTargets];
+        [self.myCamera addTarget:filter];
+        [filter addTarget:self.myGPUImageView];
+        
+        self.myFilter = filter;
+    }
+
 }
 
 

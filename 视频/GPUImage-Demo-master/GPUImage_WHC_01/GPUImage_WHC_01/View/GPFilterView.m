@@ -36,11 +36,29 @@ static const CGFloat GPFVImageWidth = 35;
 }
 
 - (void) initData {
+    
+    
+    // 创建磨皮、美白组合滤镜
+    GPUImageFilterGroup *groupFliter = [[GPUImageFilterGroup alloc] init];
+    // 磨皮滤镜
+    GPUImageBilateralFilter *bilateralFilter = [[GPUImageBilateralFilter alloc] init];
+    //bilateralFilter.distanceNormalizationFactor = 2.0;
+    
     //哈哈镜效果
     GPUImageStretchDistortionFilter *stretchDistortionFilter = [[GPUImageStretchDistortionFilter alloc] init];
     
-    //亮度
-    GPUImageBrightnessFilter *BrightnessFilter = [[GPUImageBrightnessFilter alloc] init];
+    //美白(亮度)
+    GPUImageBrightnessFilter *brightnessFilter = [[GPUImageBrightnessFilter alloc] init];
+    brightnessFilter.brightness = 0.1;
+    
+
+    [groupFliter addFilter:bilateralFilter];
+    [groupFliter addFilter:brightnessFilter];
+    
+    //.设置滤镜组链
+    [bilateralFilter addTarget:brightnessFilter];
+    [groupFliter setInitialFilters:@[bilateralFilter]];
+    groupFliter.terminalFilter = brightnessFilter;
     
     //伽马线滤镜
     GPUImageGammaFilter *gammaFilter = [[GPUImageGammaFilter alloc] init];
@@ -80,23 +98,23 @@ static const CGFloat GPFVImageWidth = 35;
     GPUImageSketchFilter *sketchFilter = [[GPUImageSketchFilter alloc] init];
     
     
-    //曝光
-    GPUImageExposureFilter *exposureFilter = [[GPUImageExposureFilter alloc] init];
+    //卡通效果
+    GPUImageToonFilter *toonFilter = [[GPUImageToonFilter alloc] init];
     
-    //曝光
-    GPUImageExposureFilter *exposureFilter = [[GPUImageExposureFilter alloc] init];
-    
-    
-    //曝光
-    GPUImageExposureFilter *exposureFilter = [[GPUImageExposureFilter alloc] init];
+    //晕影
+    GPUImageVignetteFilter *vignetteFilter = [[GPUImageVignetteFilter alloc] init];
     
     
-    //曝光
-    GPUImageExposureFilter *exposureFilter = [[GPUImageExposureFilter alloc] init];
-    */
+    //水晶球效果
+    GPUImageGlassSphereFilter *sphereFilter = [[GPUImageGlassSphereFilter alloc] init];
+    
+    
+    //浮雕效果，带有点3d的感觉
+    GPUImageEmbossFilter *embossFilter = [[GPUImageEmbossFilter alloc] init];
+    
     
     //初始化滤镜数组
-    self.filterArr = @[stretchDistortionFilter,BrightnessFilter,gammaFilter,XYDerivativeFilter,sepiaFilter,invertFilter,saturationFilter,beautyFielter,exposureFilter,contrastFilter,saturationFilter,levelsFilter, grayscaleFilter, histogramFilter, sketchFilter];
+    self.filterArr = @[groupFliter,stretchDistortionFilter,brightnessFilter,gammaFilter,XYDerivativeFilter,sepiaFilter,invertFilter,saturationFilter,beautyFielter,exposureFilter,contrastFilter,saturationFilter,levelsFilter, grayscaleFilter, histogramFilter, sketchFilter, toonFilter, vignetteFilter, sphereFilter, embossFilter];
 }
 
 - (void)setup {
@@ -122,8 +140,8 @@ static const CGFloat GPFVImageWidth = 35;
 }
 
 - (UIView *)createImageViewButtonWithX:(CGFloat)x forIndex:(int)index {
-    NSArray *imageNameArray = @[@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg", @"img1.jpg"];
-    NSArray *nameArray = @[@"哈哈镜",@"亮度",@"伽马线",@"边缘检测",@"怀旧",@"反色",@"饱和度",@"美颜",@"曝光",@"对比度",@"饱和度",@"色阶",@"灰度",@"色彩直方图",@"素描"];
+    NSArray *imageNameArray = @[@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg", @"img1.jpg",@"img1.jpg",@"img1.jpg",@"img1.jpg", @"img1.jpg", @"img1.jpg", @"img1.jpg", @"img1.jpg", @"img1.jpg", @"img1.jpg", @"img1.jpg", @"img1.jpg"];
+    NSArray *nameArray = @[@"美白磨皮",@"哈哈镜",@"亮度",@"伽马线",@"边缘检测",@"怀旧",@"反色",@"饱和度",@"美颜",@"曝光",@"对比度",@"饱和度",@"色阶",@"灰度",@"色彩直方图",@"素描",@"卡通效果",@"晕影",@"水晶球",@"浮雕效果"];
     
     UIView *view = [[UIView alloc] initWithFrame:CGRectMake(x, 0,(CGRectGetWidth(self.frame) - 2*GPFVImageToImageSpace)/4.0 , 100)];
     
