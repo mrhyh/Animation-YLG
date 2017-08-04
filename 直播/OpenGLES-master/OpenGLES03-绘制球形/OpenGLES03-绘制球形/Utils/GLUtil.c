@@ -10,6 +10,12 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <sys/time.h>
+
+
+
+int Fibonacci(int number);
+
 
 long getFileContent(char *buffer, long len, const char *filePath)
 {
@@ -145,6 +151,8 @@ GLuint createTexture2D(GLenum format, int width, int height, void *data)
 
 GLuint createVAO(void(*setting)())
 {
+    
+    
 #ifdef GL_ES_VERSION_3_0
     GLuint vao;
     glGenVertexArrays(1, &vao);
@@ -156,7 +164,10 @@ GLuint createVAO(void(*setting)())
     return vao;
 #endif
     
-#if GL_OES_vertex_array_object
+    // 这里会报错，暂时注释掉
+    /*
+#ifdef GL_OES_vertex_array_object
+    
     GLuint vao;
     glGenVertexArrays(1, &vao);
     glBindVertexArray(vao);
@@ -165,7 +176,11 @@ GLuint createVAO(void(*setting)())
     }
     glBindVertexArray(0);
     return vao;
-#endif
     
+#endif
+     */
+    
+    
+
     return 0;
 }
